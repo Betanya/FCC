@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Job Application</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+  	function postContactToGoogle() {
+  		var Grades=$('#Grades').val();
+  		var CL=$('#CL').val();
+  		var insurance=$('#insurance').val();
+  		var dayGrade=$('#dayGrade').val();
+
+  		$.ajax({
+  			url: "https://docs.google.com/forms/d/e/1FAIpQLSeud5ELfjYvyfdrXPzQ95p41bNaz5Lwjadx2qo2bJ5AupG97Q/formResponse",data: 
+  			{"entry_1691796008": Grades, "entry_231454943": CL, "entry_707998189": insurance, "entry_605565400": dayGrade}, type: "POST", dataType:"xml", statusCode:{0:function() {window.location.replace("thankyou.html");},200:function(){window.location.replace("thankyou.html");}}  		
+  		});
+  	}
+  </script>
+</head>
+<body>
+  <div>
+  <h1>Table Conversation Initiator</h1>
+  </div>
+  
+  <div>
+    <p>
+      Date: 12/18/2018 Location: Austin, Texas
+    </p>
+  </div>
+  
+  <center>
+    <form>
+    Grades: <br/>
+    <input id="Grades" type="file" name="Grades" placeholder="pdf please">
+    <br/>
+
+    Insurance: <br/>
+    <input id="CL" type="file" name="CL" placeholder="pdf please">
+    <br/>
+
+    Wedding Site: <br/>
+    <input id="insurance" type="file" name="insurance" placeholder="pdf please">
+    <br/>
+
+    Day Grade: <br/>
+    <input id="dayGrade" type="file" name="dayGrade" placeholder="pdf please">
+    <br/>
+
+    <input id="ButtonSubmit" type="button" value="Send" name="" onclick="postContactToGoogle()"/>
+
+
+    </form>
+  </center>>
+</body>
+</html>
+
