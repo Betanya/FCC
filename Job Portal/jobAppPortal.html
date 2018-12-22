@@ -20,39 +20,169 @@
   </script>
 </head>
 <body>
-  <div>
-  <h1>Table Conversation Initiator</h1>
-  </div>
+  <style>
   
-  <div>
-    <p>
-      Date: 12/18/2018 Location: Austin, Texas
-    </p>
-  </div>
+  .pimg1{
+  background-image:url('https://images.pexels.com/photos/46540/hippo-hippopotamus-animal-look-46540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('https://images.pexels.com/photos/1084513/pexels-photo-1084513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pimg3{
+  background-image: url('https://images.pexels.com/photos/46533/guinea-pig-smooth-hair-gold-agouti-young-animal-46533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  min-height:100%;
+}
+
+.section{
+  text-align:center;
+  padding:5px 10px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+#submit {
+  background-color: transparent;
+  border-radius: 0px;
+  color: white;
+  font-size: 1em;
+  height: 50px;
+  width: 100px;
+  margin: 100px;
+  border: 0px solid;
+}
+
+label {
+   cursor: pointer;
+   background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
   
-  <center>
-    <form>
-    Grades: <br/>
-    <input id="Grades" type="file" name="Grades" placeholder="pdf please">
-    <br/>
+}
 
-    Insurance: <br/>
-    <input id="CL" type="file" name="CL" placeholder="pdf please">
-    <br/>
+label:hover {
+  background-color: #282e34
+}
 
-    Wedding Site: <br/>
-    <input id="insurance" type="file" name="insurance" placeholder="pdf please">
-    <br/>
+label[type="file"] {
+  cursor: pointer;
+   background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
 
-    Day Grade: <br/>
-    <input id="dayGrade" type="file" name="dayGrade" placeholder="pdf please">
-    <br/>
+#upload-file {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+  </style>
 
-    <input id="ButtonSubmit" type="button" value="Send" name="" onclick="postContactToGoogle()"/>
+    <div class="pimg1">
+        <div class="ptext">
+          <span class="border">
+            Very Important Job
+          </span>
+        </div>
+      </div>
+      <section class="section section-light">
+<p>
+    Date: 12/18/2018 Location: Austin, Texas
+  </p>
+  
+  
+      </section>
 
+    
+  <section class="section section-light">
+      <center>
+          <form>
+          College Transcript: <br/>
+        
+          
+          <input id="upload-file" type="file" name="Grades"/>
+          <br/>
+      
+          Cover Letter: <br/>
+          <label for="upload-file">Choose File</label>
+          <input id="upload-file" type="file"  name="CL">
+          <br/>
+      
+          Wedding Site: <br/>
+          <label for="upload-file">Choose File</label>
+          <input id="upload-file" type="file" name="insurance">
+          <br/>
+      
+          Day Grade: <br/>
+          <label for="upload-file">Choose File</label>
+          <input id="upload-file" type="file" name="dayGrade">
+          <br/>
+      
+          <input id="submit" type="button" value="Send" name="" onclick="postContactToGoogle()".
+      
+      
+          </form>
+        </center>
+  </section>
 
-    </form>
-  </center>>
+<div class="pimg2"></div>
+
 </body>
 </html>
 
