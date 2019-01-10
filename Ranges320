@@ -1,0 +1,73 @@
+Sub Ranges()
+
+
+
+
+Dim Rowsdown As Integer
+
+Dim Reference As Integer
+
+Dim TotalRows As Integer
+
+Dim FirstHalfDrawer As Integer
+
+Dim EndHalfDrawer As Integer
+
+Dim WhileCounter As Integer
+
+
+TotalRows = ActiveSheet.UsedRange.Rows.Count
+
+Rowsdown = 320
+
+Reference = 2
+
+WhileCounter = 0
+
+
+
+While TotalRows > 321
+
+    If Mid([Range("A" & (Reference+1)).Offset(0,0).Select], 5, 3) <> Mid([Range("A"& Reference).Offset(0, 0).Select], 5, 3) Then
+    
+    WhileCounter = WhileCounter + 1
+    
+    TotalRows = TotalRows - Rowsdown
+    
+    FirstHalfDrawer = Range("A" & Reference).Offset(1, 0).Select
+    
+    Reference = Reference + Rowsdown
+    
+    EndHalfDrawer = Range("A" & (Reference - 1)).Offset(1, 0).Select
+    
+    Rowsdown = Rowsdown + 320
+    
+    
+    Cells(WhileCounter, 10) = FirstHalfDrawer
+    
+    Cells(WhileCounter, 11) = "StartHalfDrawer"
+    
+    Cells(WhileCounter, 12) = EndHalfDrawer
+    
+    Cells(WhileCounter, 13) = "EndHalfDrawer"
+    
+    End If
+    
+    
+    
+    
+        If Rowsdown < 330 Then
+Rowsdown = Rowsdown + 1
+        
+        End If
+        
+       
+    
+    
+        If Rowsdown > 330 Then
+Rowsdown = Rowsdown - 1
+        
+        End If
+        
+Wend
+End Sub
